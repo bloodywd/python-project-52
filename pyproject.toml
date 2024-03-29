@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "hexlet-code"
+version = "0.1.0"
+description = ""
+authors = ["bloodywd <bloodyforreal@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^5.0.3"
+
+
+[tool.poetry.group.dev.dependencies]
+python-dotenv = "^1.0.1"
+flake8 = "^7.0.0"
+django-extensions = "^3.2.3"
+ipython = "^8.22.2"
+dj-database-url = "^2.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
