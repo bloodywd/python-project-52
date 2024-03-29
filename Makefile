@@ -16,3 +16,8 @@ migrate:
 
 shell:
 	@$(MANAGE) shell_plus
+
+build:
+	poetry install
+	@$(MANAGE) makemigrations
+	@$(MANAGE) migrate
