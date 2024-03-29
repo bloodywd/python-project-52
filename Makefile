@@ -5,7 +5,7 @@ install:
 	poetry install
 
 start:
-	@$(MANAGE) runserver 0.0.0.0:8000
+	@$(MANAGE) runserver
 
 lint:
 	@poetry run flake8 task_manager
@@ -15,9 +15,9 @@ migrate:
 	@$(MANAGE) migrate
 
 shell:
-	@$(MANAGE) shell_plus
+	@$(MANAGE) shell_plus --ipython
 
-build:
-	poetry install
-	@$(MANAGE) makemigrations
-	@$(MANAGE) migrate
+dev:
+	poetry run gunicorn -w 4 task_manager.wsgi
+
+build: install migrate
