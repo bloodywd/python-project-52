@@ -5,7 +5,7 @@ install:
 	poetry install
 
 start:
-	@$(MANAGE) runserver
+	@$(MANAGE) runserver 0.0.0.0:8000
 
 lint:
 	@poetry run flake8 task_manager
