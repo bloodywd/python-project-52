@@ -4,7 +4,7 @@ MANAGE := poetry run python3 manage.py
 install:
 	poetry install
 
-start:
+dev:
 	@$(MANAGE) runserver
 
 lint:
@@ -17,7 +17,7 @@ migrate:
 shell:
 	@$(MANAGE) shell_plus --ipython
 
-dev:
+start:
 	poetry run gunicorn -w 4 task_manager.wsgi
 
 build: install migrate
