@@ -32,7 +32,7 @@ msgid "Main"
 msgstr "Главная"
 
 #: task_manager/templates/index.html:18
-msgid "Task Manager"
+msgid "Task manager"
 msgstr "Менеджер Задач"
 
 #: task_manager/templates/index.html:26
