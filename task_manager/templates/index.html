@@ -1,45 +1,10 @@
-<!DOCTYPE html>
-
-{% load django_bootstrap5 %}
+<!-- task_manager/templates/index.html -->
+{% extends "base.html" %}
 {% load i18n %}
-{% get_current_language as LANGUAGE_CODE %}
-<!-- Current language: {{ LANGUAGE_CODE }} -->
 
-<html lang="en" xmlns="">
-<head>
-    {% bootstrap_css %}
-    {% bootstrap_messages %}
-    {% bootstrap_javascript %}
-    <meta charset="UTF-8">
-    <link rel="icon" href="data:;base64,=">
-    <title>{% translate "Main" %}</title>
-</head>
-<body>
-<header>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">{% translate "Task manager" %}</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+{% block title %}{% translate "Main" %}{% endblock %}
 
-      <div class="collapse navbar-collapse" id="navbarsExample04">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link" href="#">{% translate "Users" %}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">{% translate "Login" %}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">{% translate "Registration" %}</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-
+{% block content %}
 <div class="container wrapper flex-grow-1 p-5">
   <div class="card mb-3">
     <div class="card-body p-5">
@@ -62,6 +27,4 @@
     </div>
   </div>
 </div>
-
-</body>
-</html>
+{% endblock %}

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'django_bootstrap5',
     'task_manager',
+    'task_manager.users',
 ]
 
 MIDDLEWARE = [
@@ -73,14 +74,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'task_manager.wsgi.application'
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+if not DEBUG:
+    db_from_env = dj_database_url.config(conn_max_age=500)
+    DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -112,12 +115,6 @@ LANGUAGES = [
     ('ru', _('Russian')),
 ]
 
-LOCALE_PATHS = [
-    "locale/",
-]
-
-print(LANGUAGE_CODE)
-
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -134,4 +131,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-DATABASES['default'].update(db_from_env)

@@ -1,0 +1,44 @@
+<!-- task_manager/templates/index.html -->
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Users" %}{% endblock %}
+
+{% block content %}
+<div class="container-lg mt-3 ">
+    <h1>{% translate "Users" %}</h1>
+    <div class="table-responsive">
+        <table  class="table table-bordered align-middle text-center">
+            <thead>
+                <tr>
+                    <th class="col-1">ID</th>
+                    <th class="col-3">{% translate "Name" %}</th>
+                    <th class="col-5">{% translate "Full name" %}</th>
+                    <th class="col-3">{% translate "Created at" %}</th>
+                    <th class="col-2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.date_joined }}</td>
+                    <td>
+                        <form action="{% url 'update_user' user.id %}" method="get">
+                            {% csrf_token %}
+                            <input class="btn btn-dark btn-sm m-1" type="submit" value="Update">
+                        </form>
+                        <form action="{% url 'delete_user' user.id %}" method="post">
+                            {% csrf_token %}
+                            <input class="btn btn-dark btn-sm" type="submit" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

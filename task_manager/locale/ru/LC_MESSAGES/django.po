@@ -47,10 +47,6 @@ msgstr "Вход"
 msgid "Registration"
 msgstr "Регистрация"
 
-#: task_manager/templates/index.html:43
-msgid "Task manager"
-msgstr "Менеджер задач"
-
 #: task_manager/templates/index.html:45
 msgid "Task Manager – a task management system similar to "
 msgstr "Менеджер задач – система управления задачами, подобная "
