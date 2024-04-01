@@ -1,41 +1,35 @@
 from django.shortcuts import render, redirect
 from django.views import View
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.contrib.auth.models import User
-from django.contrib import messages
-from task_manager.users.forms import UserForm
+from django.urls import reverse_lazy
+from django.contrib.messages.views import SuccessMessageMixin
+from django.views.generic.list import ListView
+from task_manager.users.forms import RegisterUserForm
 
 
-# Create your views here.
-class UsersIndexView(View):
-    def get(self, request, *args, **kwargs):
-        users = User.objects.filter(is_staff=False).order_by('id')
-        return render(request, 'users/index.html', {"users": users})
+class UsersIndexView(ListView):
+    model = User
+    paginate_by = 25
+    template_name = 'users/index.html'
 
 
-class UserFormCreateView(View):
-    def get(self, request, *args, **kwargs):
-        form = UserForm()
-        return render(request, 'users/create.html', {'form': form})
-
-    def post(self, request, *args, **kwargs):
-        form = UserForm()
-        if form.is_valid():
-            form.save()
-            messages.add_message(request, messages.SUCCESS, "Пользователь успешно создан")
-            return redirect('users')
-        messages.add_message(request, messages.ERROR, "Исправьте ошибки")
-        return render(request, 'users/create.html', {'form': form})
+class UserFormCreateView(SuccessMessageMixin, CreateView):
+    form_class = RegisterUserForm
+    template_name = 'users/create.html'
+    success_url = reverse_lazy("users")
+    success_message = "User was created successfully"
 
 
-class UserFormUpdateView(View):
-    pass
+class UserFormUpdateView(SuccessMessageMixin, UpdateView):
+    model = User
+    template_name = 'users/update.html'
+    fields = ['first_name', 'last_name', 'username']
+    success_url = reverse_lazy("users")
+    success_message = "User was created updated"
 
 
-class UserFormDeleteView(View):
-    def post(self, request, *args, **kwargs):
-        user_id = kwargs.get('id')
-        user = User.objects.filter(id=user_id).first()
-        if user:
-            user.delete()
-            messages.add_message(request, messages.SUCCESS, "Пользователь успешно удалён")
-        return redirect('users')
+class UserFormDeleteView(SuccessMessageMixin, DeleteView):
+    model = User
+    success_url = reverse_lazy("users")
+    success_message = "User was deleted successfully"

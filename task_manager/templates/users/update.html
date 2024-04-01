@@ -1,0 +1,15 @@
+<!-- task_manager/templates/index.html -->
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "User update" %}{% endblock %}
+
+{% block content %}
+<div class="container-lg mt-3 ">
+    <h1>{% translate "Update user" %}</h1>
+    <form class="form-group" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-primary bg-dark border-dark" type="submit" value="Save">
+    </form>
+</div>
+{% endblock %}

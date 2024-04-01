@@ -2,25 +2,23 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block title %}{% translate "User creation" %}{% endblock %}
+{% block title %}{% translate "Registration" %}{% endblock %}
 
 {% block content %}
 <div class="container-lg mt-3 ">
     <h1>{% translate "Registration" %}</h1>
-    <form class="form-group" action="{% url 'create_user' %}" method="post">
+    <form class="form-group" method="post">
         {% csrf_token %}
-        <table border="1">
-            {% for field in form %}
-            <div class="mb-3">
-                <label class="form-label" for="{{ field.id_for_label }}">{{field.label}}</label>
-
-                <input class="form-control" placeholder="{{field.label}}" id="{{field.id_for_label}}" type="text">
-                <div class="form-text">{{ field.help_text }}</div>
-                <div class="form-error">{{ field.errors }}</div>
-            </div>
+        <div class="form-error">{{ form.non_field_errors }}</div>
+            {% for f in form %}
+                <div class="mb-3">
+                    <label class="form-label" for="{{ f.id_for_label }}">{{f.label}}</label>
+                    {{ f }}
+                    <div class="form-text">{{ f.help_text }}</div>
+                    <div class="form-error">{{ f.errors }}</div>
+                </div>
             {% endfor %}
-        </table>
-        <button type="submit" class="btn btn-primary bg-dark border-dark">Submit</button>
+        <p ><button class="btn btn-primary bg-dark border-dark" type="submit">{% translate "Registration" %}</button></p>
     </form>
 </div>
 {% endblock %}

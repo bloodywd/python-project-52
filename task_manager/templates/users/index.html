@@ -12,17 +12,17 @@
             <thead>
                 <tr>
                     <th class="col-1">ID</th>
-                    <th class="col-3">{% translate "Name" %}</th>
-                    <th class="col-5">{% translate "Full name" %}</th>
+                    <th class="col-3">{% translate "Nickname" %}</th>
+                    <th class="col-5">{% translate "Email" %}</th>
                     <th class="col-3">{% translate "Created at" %}</th>
                     <th class="col-2"></th>
                 </tr>
             </thead>
             <tbody>
-                {% for user in users %}
+                {% for user in user_list %}
                 <tr>
                     <td>{{ user.id }}</td>
-                    <td>{{ user }}</td>
+                    <td>{{ user.first_name }}</td>
                     <td>{{ user.email }}</td>
                     <td>{{ user.date_joined }}</td>
                     <td>
