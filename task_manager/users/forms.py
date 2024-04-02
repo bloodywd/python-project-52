@@ -27,7 +27,7 @@ class UpdateUserForm(forms.ModelForm):
         fields = ['username', 'first_name', 'last_name']
 
     def __init__(self, *args, **kwargs):
-        super(UpdateUserForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         for field_name in self.fields:
             self.fields[field_name].widget.attrs['class'] = 'form-control'
             self.fields[field_name].widget.attrs['placeholder'] = self.fields[field_name].label

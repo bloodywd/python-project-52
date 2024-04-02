@@ -21,9 +21,9 @@ class UserFormCreateView(SuccessMessageMixin, CreateView):
 
 
 class UserFormUpdateView(SuccessMessageMixin, UpdateView):
+    model = User
     form_class = UpdateUserForm
     template_name = 'users/update.html'
-    fields = ['first_name', 'last_name', 'username']
     success_url = reverse_lazy("users")
     success_message = _("User was updated successfully")
 

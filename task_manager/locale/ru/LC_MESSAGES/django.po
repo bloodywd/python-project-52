@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-03 01:38+0300\n"
+"POT-Creation-Date: 2024-04-03 02:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -127,9 +127,17 @@ msgstr "Удалить"
 msgid "User update"
 msgstr "Редактирование пользователя"
 
-#: task_manager/templates/users/update.html:12
+#: task_manager/templates/users/update.html:19
 msgid "Update user"
 msgstr "Обновить"
+
+#: task_manager/users/forms.py:26
+msgid "New password"
+msgstr "Новый пароль"
+
+#: task_manager/users/forms.py:27
+msgid "Confirm password"
+msgstr "Подтвердите пароль"
 
 #: task_manager/users/views.py:20
 msgid "User was created successfully"
