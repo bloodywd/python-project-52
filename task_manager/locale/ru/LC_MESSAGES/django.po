@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-30 20:53+0300\n"
+"POT-Creation-Date: 2024-04-03 01:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,70 +19,97 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
-#: task_manager/settings.py:112
+
+#: task_manager/settings.py:116
 msgid "English"
 msgstr "Английский"
 
-#: task_manager/settings.py:113
+#: task_manager/settings.py:117
 msgid "Russian"
 msgstr "Русский"
 
-#: task_manager/templates/index.html:12
-msgid "Main"
-msgstr "Главная"
-
-#: task_manager/templates/index.html:18
+#: task_manager/templates/base.html:18 task_manager/templates/index.html:11
 msgid "Task manager"
 msgstr "Менеджер Задач"
 
-#: task_manager/templates/index.html:26
+#: task_manager/templates/base.html:26
+#: task_manager/templates/users/index.html:5
+#: task_manager/templates/users/index.html:9
 msgid "Users"
 msgstr "Пользователи"
 
-#: task_manager/templates/index.html:29
+#: task_manager/templates/base.html:29 task_manager/templates/login.html:3
+#: task_manager/templates/login.html:15
 msgid "Login"
 msgstr "Вход"
 
-#: task_manager/templates/index.html:32
+#: task_manager/templates/base.html:32
+#: task_manager/templates/users/create.html:5
+#: task_manager/templates/users/create.html:9
+#: task_manager/templates/users/create.html:20
 msgid "Registration"
 msgstr "Регистрация"
 
-#: task_manager/templates/index.html:45
+#: task_manager/templates/index.html:5
+msgid "Main"
+msgstr "Главная"
+
+#: task_manager/templates/index.html:13
 msgid "Task Manager – a task management system similar to "
 msgstr "Менеджер задач – система управления задачами, подобная "
 
-#: task_manager/templates/index.html:47
+#: task_manager/templates/index.html:15
 msgid ""
 "It allows you to set tasks, assign performers and change their statuses. It "
 "uses key aspects of website development:"
 msgstr ""
-"Она позволяет ставить задачи, назначать исполнителей и менять их статусы."
-"В ней используются ключевые аспекты разработки сайтов:"
+"Она позволяет ставить задачи, назначать исполнителей и менять их статусы.В "
+"ней используются ключевые аспекты разработки сайтов:"
 
-#: task_manager/templates/index.html:49
+#: task_manager/templates/index.html:17
 msgid "Creating entities using ORM"
 msgstr "Создание сущностей с помощью ORM"
 
-#: task_manager/templates/index.html:50
+#: task_manager/templates/index.html:18
 msgid "Description of relationships between entities (o2m, m2m)"
 msgstr "Описание связей между сущностями (o2m, m2m)"
 
-#: task_manager/templates/index.html:51
+#: task_manager/templates/index.html:19
 msgid "Resource routing using"
 msgstr "Использование ресурсного роутинга"
 
-#: task_manager/templates/index.html:52
+#: task_manager/templates/index.html:20
 msgid "Working out the authorization in Django"
 msgstr "Отработка механизма авторизации в Django"
 
-#: task_manager/templates/index.html:53
+#: task_manager/templates/index.html:21
 msgid "Creating forms to filter data"
 msgstr "Создание форм для фильтрации данных"
 
-#: task_manager/templates/index.html:54
+#: task_manager/templates/index.html:22
 msgid "Rollbar error collector integration"
 msgstr "Интеграция коллектора ошибок Rollbar"
 
-#: task_manager/templates/index.html:58
+#: task_manager/templates/index.html:26
 msgid "Learn more"
 msgstr "Узнать больше"
+
+#: task_manager/templates/users/index.html:15
+msgid "Nickname"
+msgstr "Имя пользователя"
+
+#: task_manager/templates/users/index.html:16
+msgid "Email"
+msgstr ""
+
+#: task_manager/templates/users/index.html:17
+msgid "Created at"
+msgstr "Дата создания"
+
+#: task_manager/templates/users/update.html:5
+msgid "User update"
+msgstr "Обновление пользователя"
+
+#: task_manager/templates/users/update.html:9
+msgid "Update user"
+msgstr "Обновить"
