@@ -28,11 +28,11 @@
                     <td>
                         <form action="{% url 'update_user' user.id %}" method="get">
                             {% csrf_token %}
-                            <input class="btn btn-dark btn-sm m-1" type="submit" value="Update">
+                            <input class="btn btn-dark btn-sm m-1" type="submit" value="{% translate 'Update' %}">
                         </form>
                         <form action="{% url 'delete_user' user.id %}" method="post">
                             {% csrf_token %}
-                            <input class="btn btn-dark btn-sm" type="submit" value="Delete">
+                            <input class="btn btn-dark btn-sm" type="submit" value="{% translate 'Delete' %}">
                         </form>
                     </td>
                 </tr>

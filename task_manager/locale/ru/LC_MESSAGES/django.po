@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-03 01:18+0300\n"
+"POT-Creation-Date: 2024-04-03 01:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,14 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: task_manager/forms.py:8 task_manager/forms.py:9
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: task_manager/forms.py:10 task_manager/forms.py:11
+msgid "Password"
+msgstr "Пароль"
 
 #: task_manager/settings.py:116
 msgid "English"
@@ -39,7 +47,7 @@ msgid "Users"
 msgstr "Пользователи"
 
 #: task_manager/templates/base.html:29 task_manager/templates/login.html:3
-#: task_manager/templates/login.html:15
+#: task_manager/templates/login.html:7 task_manager/templates/login.html:15
 msgid "Login"
 msgstr "Вход"
 
@@ -100,16 +108,37 @@ msgstr "Имя пользователя"
 
 #: task_manager/templates/users/index.html:16
 msgid "Email"
-msgstr ""
+msgstr "Адрес электронной почты"
 
 #: task_manager/templates/users/index.html:17
 msgid "Created at"
 msgstr "Дата создания"
 
-#: task_manager/templates/users/update.html:5
-msgid "User update"
-msgstr "Обновление пользователя"
+#: task_manager/templates/users/index.html:31
+msgid "Update"
+msgstr "Обновить"
 
+#: task_manager/templates/users/index.html:35
+msgid "Delete"
+msgstr "Удалить"
+
+#: task_manager/templates/users/update.html:5
 #: task_manager/templates/users/update.html:9
+msgid "User update"
+msgstr "Редактирование пользователя"
+
+#: task_manager/templates/users/update.html:12
 msgid "Update user"
 msgstr "Обновить"
+
+#: task_manager/users/views.py:20
+msgid "User was created successfully"
+msgstr "Пользователь был успешно создан"
+
+#: task_manager/users/views.py:28
+msgid "User was updated successfully"
+msgstr "Пользователь был успешно обновлен"
+
+#: task_manager/users/views.py:34
+msgid "User was deleted successfully"
+msgstr "Пользователь был успешно удален"
