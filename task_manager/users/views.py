@@ -1,10 +1,11 @@
+from django.http import HttpResponseRedirect
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
-from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic.list import ListView
 from task_manager.users.forms import UserForm
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.forms import User
 
 
 class UsersIndexView(ListView):
