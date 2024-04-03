@@ -1,22 +1,21 @@
 <!-- task_manager/templates/index.html -->
 {% extends "base.html" %}
 {% load i18n %}
+{% load django_bootstrap5 %}
 
 {% block title %}{% translate "User update" %}{% endblock %}
 
 {% block content %}
 <div class="container-lg mt-3 ">
     <h1>{% translate "User update" %}</h1>
-    <form class="form-group" method="post">{% csrf_token %}
-        {% for f in form %}
-            <div class="mb-3">
-                <label class="form-label" for="{{ f.id_for_label }}">{{f.label}}</label>
-                {{ f }}
-                <div class="form-text">{{ f.help_text }}</div>
-                <div class="form-error">{{ f.errors }}</div>
-            </div>
+    <form class="form-group" method="post">
+        {% csrf_token %}
+        {% bootstrap_form_errors form %}
+        {%  for field in form %}
+            {% bootstrap_field field %}
         {% endfor %}
-        <input class="btn btn-primary bg-dark border-dark" type="submit" value="{% translate 'Update user' %}">
+        {% bootstrap_button "Submit" button_type="submit" button_class="btn-primary bg-dark border-dark"%}
     </form>
 </div>
+
 {% endblock %}

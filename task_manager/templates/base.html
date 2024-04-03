@@ -25,12 +25,18 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'users' %}">{% translate "Users" %}</a>
           </li>
+            {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">{% translate "Logout" %}</a>
+          </li>
+            {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'login' %}">{% translate "Login" %}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'create_user' %}">{% translate "Registration" %}</a>
           </li>
+            {% endif %}
         </ul>
       </div>
     </div>
