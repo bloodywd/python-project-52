@@ -6,9 +6,9 @@
 
 <div class="container-lg mt-3 ">
     <h1>{{ title }}</h1>
-    <form action="{% url 'delete_user' user.id %}" method="post">
+    <form action="{% url 'delete_status' status.id %}" method="post">
         {% csrf_token %}
-        <p>Are you sure, you want to delete {{ user }}?</p>
+        <p>Are you sure, you want to delete {{ status }}?</p>
         {% bootstrap_button "Yes, delete" button_type="submit" button_class="btn-primary bg-dark border-dark"%}
     </form>
 </div>

@@ -1,0 +1,35 @@
+<!-- task_manager/templates/index.html -->
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="container-lg mt-3 ">
+    <h1>{{ title }}</h1>
+    <a class="btn btn-primary bg-dark border-dark  mt-3" href="/statuses/create/">Create status</a>
+    <div class="table-responsive mt-3">
+        <table class="table table-bordered align-middle text-center">
+            <thead>
+                <tr>
+                    <th class="col-1">ID</th>
+                    <th class="col-3">{% translate "Name" %}</th>
+                    <th class="col-3">{% translate "Created at" %}</th>
+                    <th class="col-2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for status in status_list %}
+                <tr>
+                    <td>{{ status.id }}</td>
+                    <td>{{ status }}</td>
+                    <td>{{ status.time_create }}</td>
+                    <td>
+                        <a href="{% url 'update_status' status.id %}">Edit</a>
+                        <a href="{% url 'delete_status' status.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

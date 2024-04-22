@@ -20,8 +20,8 @@ class UsersIndexView(ListView):
 
 class UserFormCreateView(SuccessMessageMixin, CreateView):
     form_class = UserForm
-    template_name = 'users/user_form.html'
-    success_url = reverse_lazy("users")
+    template_name = 'form.html'
+    success_url = reverse_lazy("login")
     success_message = _("User was created successfully")
     extra_context = {'title': "Create user", 'button_name': 'Create'}
 
@@ -29,7 +29,7 @@ class UserFormCreateView(SuccessMessageMixin, CreateView):
 class UserFormUpdateView(SelfActionPermissionMixin, SuccessMessageMixin, UpdateView):
     model = get_user_model()
     form_class = UserForm
-    template_name = 'users/user_form.html'
+    template_name = 'form.html'
     success_url = reverse_lazy("users")
     success_message = _("User was updated successfully")
     extra_context = {'title': "Edit user", 'button_name': 'Edit'}
@@ -41,4 +41,5 @@ class UserFormDeleteView(SelfActionPermissionMixin, SuccessMessageMixin, DeleteV
     template_name = 'users/user_delete.html'
     success_url = reverse_lazy("users")
     success_message = _("User was deleted successfully")
+    extra_context = {'title': "Delete status"}
     permission_denied_message = 'You cant delete other users'

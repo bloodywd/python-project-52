@@ -13,7 +13,7 @@ class IndexView(TemplateView):
 
 class LoginUser(SuccessMessageMixin, LoginView):
     form_class = AuthenticationForm
-    template_name = 'users/user_form.html'
+    template_name = 'form.html'
     extra_context = {'title': "Login", 'button_name': 'Login'}
     success_message = _('You are logged in')
 
