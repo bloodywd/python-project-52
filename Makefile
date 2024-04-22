@@ -14,8 +14,11 @@ migrate:
 	@$(MANAGE) makemigrations
 	@$(MANAGE) migrate
 
+test:
+	@$(MANAGE) test
+
 shell:
-	@$(MANAGE) shell_plus --ipython
+	@$(MANAGE) shell_plus
 
 start:
 	poetry run gunicorn -w 4 task_manager.wsgi

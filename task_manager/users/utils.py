@@ -11,7 +11,7 @@ class SelfActionPermissionMixin(PermissionRequiredMixin):
     def handle_no_permission(self):
         if not self.request.user.is_authenticated:
             messages.error(self.request, "You need to be logged in")
-            return redirect(reverse_lazy("login"))
+            return redirect(self.get_login_url())
         else:
             messages.error(self.request, self.permission_denied_message)
             return redirect(reverse_lazy("users"))
