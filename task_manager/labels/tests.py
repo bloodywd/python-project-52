@@ -2,7 +2,7 @@ from django.test import Client, TestCase
 from django.urls import reverse_lazy
 from django.contrib.auth import get_user_model
 
-from task_manager.statuses.models import Status
+from task_manager.labels.models import Label
 
 
 class UserTestCase(TestCase):
@@ -12,31 +12,31 @@ class UserTestCase(TestCase):
         self.client.force_login(user)
 
     def dropDown(self):
-        Status.objects.clear()
+        Label.objects.clear()
 
     def test_create_status(self):
-        self.client.post(reverse_lazy('create_status'),
+        self.client.post(reverse_lazy('create_label'),
                                     {
                                         'name': 'TEST',
                                     })
-        self.assertTrue(Status.objects.filter(name='TEST').exists())
+        self.assertTrue(Label.objects.filter(name='TEST').exists())
 
     def test_update_status(self):
-        status = Status.objects.create(name='UPDATE')
-        status_pk = status.id
-        url = reverse_lazy('update_status', kwargs={"pk": status_pk})
+        label = Label.objects.create(name='UPDATE')
+        label_pk = label.id
+        url = reverse_lazy('update_label', kwargs={"pk": label_pk})
         response = self.client.post(url, {'name': 'UPDATETEST'})
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(Status.objects.get(id=status_pk).name, 'UPDATETEST')
+        self.assertEqual(Label.objects.get(id=label_pk).name, 'UPDATETEST')
 
     def test_delete_status(self):
-        status = Status.objects.create(name='UPDATE')
-        status_pk = status.id
-        url = reverse_lazy('delete_status', kwargs={"pk": status_pk})
+        label = Label.objects.create(name='UPDATE')
+        label_pk = label.id
+        url = reverse_lazy('delete_label', kwargs={"pk": label_pk})
         self.client.post(url)
-        self.assertFalse(Status.objects.filter(id=status_pk).exists())
+        self.assertFalse(Label.objects.filter(id=label_pk).exists())
 
     def test_login_required(self):
         self.client.logout()
-        response = self.client.get(reverse_lazy('statuses'))
+        response = self.client.get(reverse_lazy('labels'))
         self.assertEqual(response.status_code, 302)

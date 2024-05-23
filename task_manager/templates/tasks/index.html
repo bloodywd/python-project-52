@@ -1,0 +1,42 @@
+<!-- task_manager/templates/index.html -->
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="container mt-3 flex-grow-1">
+    <h1>{{ title }}</h1>
+    <a class="btn btn-primary bg-dark border-dark  mt-3" href="{% url 'create_task' %}">Create task</a>
+    <div class="table-responsive mt-3">
+        <table class="table table-striped table-bordered align-middle text-center">
+            <thead>
+                <tr>
+                    <th class="col">ID</th>
+                    <th class="col-2">{% translate "Name" %}</th>
+                    <th class="col">{% translate "Status" %}</th>
+                    <th class="col">{% translate "Author" %}</th>
+                    <th class="col">{% translate "Task perfomer" %}</th>
+                    <th class="col">{% translate "Created at" %}</th>
+                    <th class="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in task_list %}
+                <tr>
+                    <td>{{ task.id }}</td>
+                    <td><a href="{% url 'view_task' task.id %}">{{ task.name }}</a></td>
+                    <td>{{ task.status }}</td>
+                    <td>{{ task.author }}</td>
+                    <td>{{ task.task_perfomer }}</td>
+                    <td>{{ task.time_create }}</td>
+                    <td>
+                        <a href="{% url 'update_task' task.id %}">Edit</a>
+                        <br>
+                        <a href="{% url 'delete_task' task.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

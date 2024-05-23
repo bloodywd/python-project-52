@@ -1,0 +1,42 @@
+<!-- task_manager/templates/index.html -->
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="container-lg mt-3 ">
+    <h1>{{ title }}</h1>
+<div class="card mt-3">
+  <div class="card-header">
+    <h3>{{task.name}}</h3>
+  </div>
+  <div class="card-body">
+    <p>{{task.description}}</p>
+    <hr>
+    <div class="row p-2">
+      <div class="col">Author:</div>
+      <div class="col">{{task.author}}</div>
+    </div>
+    <div class="row p-2">
+      <div class="col">Task perfomer:</div>
+      <div class="col">{{task.task_perfomer}}</div>
+    </div>
+    <div class="row p-2">
+      <div class="col">Status:</div>
+      <div class="col">{{task.status}}</div>
+    </div>
+    <div class="row p-2">
+      <div class="col">Created at:</div>
+      <div class="col">{{task.time_create}}</div>
+    </div>
+    <div class="row p-2">
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+    <a class="p-2" href="{% url 'update_task' task.id %}">Edit</a>
+    <br>
+    <a class="p-2" href="{% url 'delete_task' task.id %}">Delete</a>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
 from task_manager.statuses.models import Status
 
 
-class StatusIndexView(ListView):
+class StatusIndexView(LoginRequiredMixin, ListView):
     model = Status
     template_name = 'statuses/index.html'
     extra_context = {'title': "Statuses"}
@@ -33,7 +33,7 @@ class StatusFormUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'form.html'
     success_url = reverse_lazy("statuses")
     success_message = _("Status was updated successfully")
-    extra_context = {'title': "Edit status", 'button_name': 'Edit'}
+    extra_context = {'title': "Edit status", 'button_name': 'Save'}
 
     def form_valid(self, form):
         status = form.save(commit=False)

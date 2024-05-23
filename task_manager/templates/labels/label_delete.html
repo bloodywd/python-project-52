@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+
+<div class="container-lg mt-3 ">
+    <h1>{{ title }}</h1>
+    <form action="{% url 'delete_label' label.id %}" method="post">
+        {% csrf_token %}
+        <p>Are you sure, you want to delete {{ label }}?</p>
+        {% bootstrap_button "Yes, delete" button_type="submit" button_class="btn-primary bg-dark border-dark"%}
+    </form>
+</div>
+{% endblock %}
