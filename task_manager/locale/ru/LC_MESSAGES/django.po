@@ -204,7 +204,7 @@ msgstr "Вы залогинены"
 
 #: views.py:22
 msgid "You are logged out"
-msgstr "Вы вышли из системы"
+msgstr "Вы разлогинены"
 
 #~ msgid "Username"
 #~ msgstr "Имя пользователя"

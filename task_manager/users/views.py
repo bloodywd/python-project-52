@@ -14,7 +14,7 @@ from task_manager.users.utils import SelfActionPermissionMixin
 class UsersIndexView(ListView):
     model = get_user_model()
     template_name = 'users/index.html'
-    extra_context = {'title': "Users"}
+    extra_context = {'title': _("Users")}
 
 
 class UserFormCreateView(SuccessMessageMixin, CreateView):
@@ -22,7 +22,7 @@ class UserFormCreateView(SuccessMessageMixin, CreateView):
     template_name = 'form.html'
     success_url = reverse_lazy("login")
     success_message = _("User was created successfully")
-    extra_context = {'title': "Create user", 'button_name': 'Create'}
+    extra_context = {'title': _("Create user"), 'button_name': _('Create')}
 
 
 class UserFormUpdateView(SelfActionPermissionMixin, SuccessMessageMixin, UpdateView):
@@ -31,8 +31,8 @@ class UserFormUpdateView(SelfActionPermissionMixin, SuccessMessageMixin, UpdateV
     template_name = 'form.html'
     success_url = reverse_lazy("users")
     success_message = _("User was updated successfully")
-    extra_context = {'title': "Edit user", 'button_name': 'Save'}
-    permission_denied_message = 'You cant edit other users'
+    extra_context = {'title': _("Edit user"), 'button_name': _('Save')}
+    permission_denied_message = _('You cant edit other users')
 
 
 class UserFormDeleteView(SelfActionPermissionMixin, SuccessMessageMixin, DeleteView):
