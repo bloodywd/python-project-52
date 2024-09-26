@@ -1,19 +1,21 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from django.utils.translation import gettext_lazy as _
+from django_filters.views import FilterView
 
+from task_manager.tasks.filters import TaskFilter
 from task_manager.tasks.models import Task
 
 
-class TaskIndexView(LoginRequiredMixin, ListView):
+class TaskIndexView(LoginRequiredMixin, FilterView):
     model = Task
     template_name = 'tasks/index.html'
     extra_context = {'title': "Tasks"}
-
+    filterset_class = TaskFilter
 
 class TaskView(LoginRequiredMixin, DetailView):
     model = Task
