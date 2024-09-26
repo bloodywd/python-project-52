@@ -4,6 +4,17 @@ version = "0.1.0"
 description = ""
 authors = ["bloodywd <bloodyforreal@gmail.com>"]
 readme = "README.md"
+packages = [
+  { include = "task_manager" },
+]
+classifiers = [
+  "Environment :: Web Environment",
+  "Framework :: Django",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Topic :: Internet :: WWW/HTTP :: Site Management :: Link Checking",
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
