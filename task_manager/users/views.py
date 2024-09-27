@@ -31,7 +31,7 @@ class UserFormUpdateView(SelfActionPermissionMixin, SuccessMessageMixin, UpdateV
     template_name = 'form.html'
     success_url = reverse_lazy("users")
     success_message = _("User was updated successfully")
-    extra_context = {'title': _("Edit user"), 'button_name': _('Save')}
+    extra_context = {'title': _("Edit user"), 'button_name': _('Edit')}
     permission_denied_message = _('You cant edit other users')
 
 
