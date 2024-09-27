@@ -58,7 +58,7 @@ msgstr "Метка на активной задаче"
 
 #: labels/views.py:49
 msgid "Label was deleted successfully"
-msgstr "Метка была успешно удалена"
+msgstr "Метка успешно удалена"
 
 #: settings.py:118
 msgid "English"
@@ -74,7 +74,7 @@ msgstr "Статусы"
 
 #: statuses/views.py:21
 msgid "Status was created successfully"
-msgstr "Статус был успешно создан"
+msgstr "Статус успешно создан"
 
 #: statuses/views.py:22 templates/statuses/index.html:8
 msgid "Create status"
@@ -82,7 +82,7 @@ msgstr "Создать статус"
 
 #: statuses/views.py:35
 msgid "Status was updated successfully"
-msgstr "Статус был успешно изменен"
+msgstr "Статус успешно изменен"
 
 #: statuses/views.py:36
 msgid "Edit status"
@@ -94,7 +94,7 @@ msgstr "Удалить статус"
 
 #: statuses/views.py:49
 msgid "Status was deleted successfully"
-msgstr "Статус был успешно удален"
+msgstr "Статус успешно удален"
 
 #: tasks/filters.py:13
 msgid "Label"
