@@ -13,7 +13,7 @@ from task_manager.labels.models import Label
 class LabelIndexView(LoginRequiredMixin, ListView):
     model = Label
     template_name = 'labels/index.html'
-    extra_context = {'title': "Labels"}
+    extra_context = {'title': _("Labels")}
 
 
 class LabelFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
@@ -22,7 +22,7 @@ class LabelFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     template_name = 'form.html'
     success_url = reverse_lazy("labels")
     success_message = _("Label was created successfully")
-    extra_context = {'title': "Create label", 'button_name': 'Create'}
+    extra_context = {'title': _("Create label"), 'button_name': _('Create')}
 
 
 class LabelFormUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
@@ -31,20 +31,20 @@ class LabelFormUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'form.html'
     success_url = reverse_lazy("labels")
     success_message = _("Label was updated successfully")
-    extra_context = {'title': "Edit label", 'button_name': 'Save'}
+    extra_context = {'title': _("Edit label"), 'button_name': _('Save')}
 
 
 class LabelFormDeleteView(LoginRequiredMixin, DeleteView):
     model = Label
     template_name = 'labels/label_delete.html'
-    extra_context = {'title': "Delete labels"}
+    extra_context = {'title': _("Delete labels")}
 
     def post(self, request, *args, **kwargs):
         label = self.get_object()
         if label.has_tasks():
-            messages.error(self.request, 'Label is on active task')
+            messages.error(self.request, _('Label is on active task'))
             return redirect(reverse_lazy("labels"))
         else:
             label.delete()
-            messages.success(self.request, 'Label was deleted successfully')
+            messages.success(self.request, _('Label was deleted successfully'))
             return HttpResponseRedirect(reverse_lazy("labels"))

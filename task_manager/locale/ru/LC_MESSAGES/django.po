@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-27 19:07+0300\n"
+"POT-Creation-Date: 2024-09-27 20:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,17 +20,45 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
+#: labels/views.py:16 templates/includes/nav.html:21
+msgid "Labels"
+msgstr "Метки"
+
 #: labels/views.py:24
-#, fuzzy
-#| msgid "User was created successfully"
 msgid "Label was created successfully"
-msgstr "Пользователь был успешно создан"
+msgstr "Метка была успешно создана"
+
+#: labels/views.py:25 templates/labels/index.html:8
+msgid "Create label"
+msgstr "Создать метку"
+
+#: labels/views.py:25 statuses/views.py:22 tasks/views.py:33
+msgid "Create"
+msgstr "Создать"
 
 #: labels/views.py:33
-#, fuzzy
-#| msgid "User was updated successfully"
 msgid "Label was updated successfully"
-msgstr "Пользователь был успешно обновлен"
+msgstr "Метка была успешно изменена"
+
+#: labels/views.py:34
+msgid "Edit label"
+msgstr "Изменить метку"
+
+#: labels/views.py:34 statuses/views.py:36 tasks/views.py:47 users/views.py:34
+msgid "Save"
+msgstr "Сохранить"
+
+#: labels/views.py:40
+msgid "Delete labels"
+msgstr "Удалить метку"
+
+#: labels/views.py:45
+msgid "Label is on active task"
+msgstr "Метка на активной задаче"
+
+#: labels/views.py:49
+msgid "Label was deleted successfully"
+msgstr "Метка была успешно удалена"
 
 #: settings.py:118
 msgid "English"
@@ -40,61 +68,97 @@ msgstr "Английский"
 msgid "Russian"
 msgstr "Русский"
 
+#: statuses/views.py:13 templates/includes/nav.html:18
+msgid "Statuses"
+msgstr "Статусы"
+
 #: statuses/views.py:21
-#, fuzzy
-#| msgid "User was created successfully"
 msgid "Status was created successfully"
-msgstr "Пользователь был успешно создан"
+msgstr "Статус был успешно создан"
+
+#: statuses/views.py:22 templates/statuses/index.html:8
+msgid "Create status"
+msgstr "Создать статус"
 
 #: statuses/views.py:35
-#, fuzzy
-#| msgid "User was updated successfully"
 msgid "Status was updated successfully"
-msgstr "Пользователь был успешно обновлен"
+msgstr "Статус был успешно изменен"
+
+#: statuses/views.py:36
+msgid "Edit status"
+msgstr "Изменить статус"
+
+#: statuses/views.py:48 users/views.py:43
+msgid "Delete status"
+msgstr "Удалить статус"
 
 #: statuses/views.py:49
-#, fuzzy
-#| msgid "User was deleted successfully"
 msgid "Status was deleted successfully"
-msgstr "Пользователь был успешно удален"
+msgstr "Статус был успешно удален"
+
+#: tasks/filters.py:13
+msgid "Label"
+msgstr "Метка"
+
+#: tasks/filters.py:17
+msgid "Only own tasks"
+msgstr "Только свои задачи"
+
+#: tasks/filters.py:24
+msgid "Task Performer"
+msgstr "Исполнитель"
+
+#: tasks/filters.py:29 templates/tasks/index.html:23
+msgid "Status"
+msgstr "Статус"
+
+#: tasks/views.py:17 templates/includes/nav.html:24
+msgid "Tasks"
+msgstr "Задачи"
+
+#: tasks/views.py:24
+msgid "View task"
+msgstr "Просмотр задачи"
 
 #: tasks/views.py:32
-#, fuzzy
-#| msgid "User was created successfully"
 msgid "Task was created successfully"
-msgstr "Пользователь был успешно создан"
+msgstr "Задача была успешно создана"
+
+#: tasks/views.py:33 templates/tasks/index.html:8
+msgid "Create task"
+msgstr "Создать задачу"
 
 #: tasks/views.py:46
-#, fuzzy
-#| msgid "User was updated successfully"
 msgid "Task was updated successfully"
-msgstr "Пользователь был успешно обновлен"
+msgstr "Задача была успешно изменена"
+
+#: tasks/views.py:47
+msgid "Edit task"
+msgstr "Изменить задачу"
+
+#: tasks/views.py:54
+msgid "Delete tasks"
+msgstr "Удалить задачу"
 
 #: tasks/views.py:55
-#, fuzzy
-#| msgid "User was deleted successfully"
 msgid "Task was deleted successfully"
-msgstr "Пользователь был успешно удален"
+msgstr "Задача была успешно удалена"
+
+#: tasks/views.py:56
+msgid "Task can be deleted only be it's author"
+msgstr "Задача может быть удалена ее автором"
+
+#: tasks/views.py:65
+msgid "You need to be logged in"
+msgstr "Вы не залогинены"
 
 #: templates/includes/nav.html:6 templates/index.html:9
 msgid "Task manager"
-msgstr "Менеджер Задач"
+msgstr "Менеджер задач"
 
 #: templates/includes/nav.html:14 users/views.py:17
 msgid "Users"
 msgstr "Пользователи"
-
-#: templates/includes/nav.html:18
-msgid "Statuses"
-msgstr "Статусы"
-
-#: templates/includes/nav.html:21
-msgid "Labels"
-msgstr "Метки"
-
-#: templates/includes/nav.html:24
-msgid "Tasks"
-msgstr "Задачи"
 
 #: templates/includes/nav.html:35 views.py:16
 msgid "Login"
@@ -149,24 +213,32 @@ msgstr "Узнать больше"
 msgid "Name"
 msgstr "Имя"
 
+#: templates/labels/index.html:24 templates/statuses/index.html:26
+#: templates/tasks/index.html:40 templates/users/index.html:27
+msgid "Edit"
+msgstr "Изменить"
+
+#: templates/labels/index.html:26 templates/statuses/index.html:28
+#: templates/tasks/index.html:42 templates/users/index.html:29
+msgid "Delete"
+msgstr "Удалить"
+
 #: templates/statuses/index.html:15 templates/tasks/index.html:26
 #: templates/users/index.html:15
 msgid "Created at"
 msgstr "Дата создания"
 
-#: templates/tasks/index.html:23
-msgid "Status"
-msgstr "Статус"
+#: templates/tasks/index.html:13
+msgid "Show"
+msgstr "Показать"
 
 #: templates/tasks/index.html:24
 msgid "Author"
 msgstr "Автор"
 
 #: templates/tasks/index.html:25
-#, fuzzy
-#| msgid "Task manager"
 msgid "Task perfomer"
-msgstr "Менеджер Задач"
+msgstr "Исполнитель"
 
 #: templates/users/index.html:13
 msgid "Nickname"
@@ -189,14 +261,8 @@ msgid "User was updated successfully"
 msgstr "Пользователь был успешно обновлен"
 
 #: users/views.py:34
-#, fuzzy
-#| msgid "Update user"
 msgid "Edit user"
-msgstr "Обновить"
-
-#: users/views.py:34
-msgid "Save"
-msgstr "Сохранить"
+msgstr "Изменить пользователя"
 
 #: users/views.py:35
 msgid "You cant edit other users"
@@ -205,12 +271,6 @@ msgstr "Вы не можете редактировать других поль�
 #: users/views.py:42
 msgid "User was deleted successfully"
 msgstr "Пользователь был успешно удален"
-
-#: users/views.py:43
-#, fuzzy
-#| msgid "Delete"
-msgid "Delete status"
-msgstr "Удалить"
 
 #: users/views.py:44
 msgid "You cant delete other users"
@@ -221,8 +281,6 @@ msgid "Cant delete active user"
 msgstr "Нельзя удалить активного пользователя"
 
 #: views.py:10
-#, fuzzy
-#| msgid "Main"
 msgid "Main page"
 msgstr "Главная"
 

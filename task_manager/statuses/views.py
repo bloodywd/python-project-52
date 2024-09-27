@@ -10,7 +10,7 @@ from task_manager.statuses.models import Status
 class StatusIndexView(LoginRequiredMixin, ListView):
     model = Status
     template_name = 'statuses/index.html'
-    extra_context = {'title': "Statuses"}
+    extra_context = {'title': _("Statuses")}
 
 
 class StatusFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
@@ -19,7 +19,7 @@ class StatusFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     template_name = 'form.html'
     success_url = reverse_lazy("statuses")
     success_message = _("Status was created successfully")
-    extra_context = {'title': "Create status", 'button_name': 'Create'}
+    extra_context = {'title': _("Create status"), 'button_name': _('Create')}
 
     def form_valid(self, form):
         status = form.save(commit=False)
@@ -33,7 +33,7 @@ class StatusFormUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'form.html'
     success_url = reverse_lazy("statuses")
     success_message = _("Status was updated successfully")
-    extra_context = {'title': "Edit status", 'button_name': 'Save'}
+    extra_context = {'title': _("Edit status"), 'button_name': _('Save')}
 
     def form_valid(self, form):
         status = form.save(commit=False)
@@ -45,5 +45,5 @@ class StatusFormDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Status
     template_name = 'statuses/status_delete.html'
     success_url = reverse_lazy("statuses")
-    extra_context = {'title': "Delete status"}
+    extra_context = {'title': _("Delete status")}
     success_message = _("Status was deleted successfully")

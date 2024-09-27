@@ -14,14 +14,14 @@ from task_manager.tasks.models import Task
 class TaskIndexView(LoginRequiredMixin, FilterView):
     model = Task
     template_name = 'tasks/index.html'
-    extra_context = {'title': "Tasks"}
+    extra_context = {'title': _("Tasks")}
     filterset_class = TaskFilter
 
 class TaskView(LoginRequiredMixin, DetailView):
     model = Task
     context_object_name = 'task'
     template_name = 'tasks/task.html'
-    extra_context = {'title': "View task"}
+    extra_context = {'title': _("View task")}
 
 
 class TaskFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
@@ -30,7 +30,7 @@ class TaskFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     template_name = 'form.html'
     success_url = reverse_lazy("tasks")
     success_message = _("Task was created successfully")
-    extra_context = {'title': "Create task", 'button_name': 'Create'}
+    extra_context = {'title': _("Create task"), 'button_name': _('Create')}
 
     def form_valid(self, form):
         status = form.save(commit=False)
@@ -44,16 +44,16 @@ class TaskFormUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'form.html'
     success_url = reverse_lazy("tasks")
     success_message = _("Task was updated successfully")
-    extra_context = {'title': "Edit task", 'button_name': 'Save'}
+    extra_context = {'title': _("Edit task"), 'button_name': _('Save')}
 
 
 class TaskFormDeleteView(PermissionRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Task
     template_name = 'tasks/task_delete.html'
     success_url = reverse_lazy("tasks")
-    extra_context = {'title': "Delete tasks"}
+    extra_context = {'title': _("Delete tasks")}
     success_message = _("Task was deleted successfully")
-    permission_denied_message = 'Task can be deleted only be it\'s author'
+    permission_denied_message = _('Task can be deleted only be it\'s author')
 
     def has_permission(self):
         task = Task.objects.get(id=self.kwargs['pk'])
@@ -62,7 +62,7 @@ class TaskFormDeleteView(PermissionRequiredMixin, SuccessMessageMixin, DeleteVie
 
     def handle_no_permission(self):
         if not self.request.user.is_authenticated:
-            messages.error(self.request, "You need to be logged in")
+            messages.error(self.request, _("You need to be logged in"))
             return redirect(self.get_login_url())
         else:
             messages.error(self.request, self.permission_denied_message)
