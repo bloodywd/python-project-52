@@ -250,7 +250,7 @@ msgstr "Полное имя"
 
 #: users/views.py:24
 msgid "User was created successfully"
-msgstr "Пользователь был успешно создан"
+msgstr "Пользователь успешно зарегистрирован"
 
 #: users/views.py:25
 msgid "Submit registration"
