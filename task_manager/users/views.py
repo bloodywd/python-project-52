@@ -40,7 +40,7 @@ class UserFormDeleteView(SelfActionPermissionMixin, SuccessMessageMixin, DeleteV
     template_name = 'users/user_delete.html'
     success_url = reverse_lazy("users")
     success_message = _("User was deleted successfully")
-    extra_context = {'title': _("Delete status")}
+    extra_context = {'title': _("Delete user")}
     permission_denied_message = _('You cant delete other users')
 
     def post(self, request, *args, **kwargs):
