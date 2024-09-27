@@ -259,7 +259,7 @@ msgstr "Зарегистрировать"
 
 #: users/views.py:33
 msgid "User was updated successfully"
-msgstr "Пользователь был успешно обновлен"
+msgstr "Пользователь успешно изменен"
 
 #: users/views.py:34
 msgid "Edit user"
