@@ -10,7 +10,7 @@ from task_manager.statuses.models import Status
 class StatusIndexView(LoginRequiredMixin, ListView):
     model = Status
     template_name = 'statuses/index.html'
-    extra_context = {'title': "Statuses"}
+    extra_context = {'title': _("Status list")}
 
 
 class StatusFormCreateView(LoginRequiredMixin, SuccessMessageMixin,
@@ -34,7 +34,7 @@ class StatusFormUpdateView(LoginRequiredMixin, SuccessMessageMixin,
     template_name = 'form.html'
     success_url = reverse_lazy("statuses")
     success_message = _("Status was updated successfully")
-    extra_context = {'title': _("Edit status"), 'button_name': _('Save')}
+    extra_context = {'title': _("Edit status"), 'button_name': _('Edit')}
 
     def form_valid(self, form):
         status = form.save(commit=False)
