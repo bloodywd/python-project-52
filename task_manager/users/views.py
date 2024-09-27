@@ -22,7 +22,7 @@ class UserFormCreateView(SuccessMessageMixin, CreateView):
     template_name = 'form.html'
     success_url = reverse_lazy("login")
     success_message = _("User was created successfully")
-    extra_context = {'title': _("Create user"), 'button_name': _('Create')}
+    extra_context = {'title': _("Registration"), 'button_name': _('Submit registration')}
 
 
 class UserFormUpdateView(SelfActionPermissionMixin, SuccessMessageMixin, UpdateView):
@@ -40,13 +40,13 @@ class UserFormDeleteView(SelfActionPermissionMixin, SuccessMessageMixin, DeleteV
     template_name = 'users/user_delete.html'
     success_url = reverse_lazy("users")
     success_message = _("User was deleted successfully")
-    extra_context = {'title': "Delete status"}
-    permission_denied_message = 'You cant delete other users'
+    extra_context = {'title': _("Delete status")}
+    permission_denied_message = _('You cant delete other users')
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         if self.object.has_tasks():
-            messages.error(self.request, 'Cant delete active user')
+            messages.error(self.request, _('Cant delete active user'))
             return redirect(reverse_lazy("users"))
         else:
             self.object.delete()

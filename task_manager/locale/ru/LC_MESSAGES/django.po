@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-27 00:27+0300\n"
+"POT-Creation-Date: 2024-09-27 19:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,7 @@ msgstr "Пользователь был успешно удален"
 msgid "Task manager"
 msgstr "Менеджер Задач"
 
-#: templates/includes/nav.html:14
+#: templates/includes/nav.html:14 users/views.py:17
 msgid "Users"
 msgstr "Пользователи"
 
@@ -100,7 +100,7 @@ msgstr "Задачи"
 msgid "Login"
 msgstr "Вход"
 
-#: templates/includes/nav.html:38
+#: templates/includes/nav.html:38 users/views.py:25
 msgid "Registration"
 msgstr "Регистрация"
 
@@ -180,13 +180,45 @@ msgstr "Полное имя"
 msgid "User was created successfully"
 msgstr "Пользователь был успешно создан"
 
+#: users/views.py:25
+msgid "Submit registration"
+msgstr "Зарегистрироваться"
+
 #: users/views.py:33
 msgid "User was updated successfully"
 msgstr "Пользователь был успешно обновлен"
 
+#: users/views.py:34
+#, fuzzy
+#| msgid "Update user"
+msgid "Edit user"
+msgstr "Обновить"
+
+#: users/views.py:34
+msgid "Save"
+msgstr "Сохранить"
+
+#: users/views.py:35
+msgid "You cant edit other users"
+msgstr "Вы не можете редактировать других пользователей"
+
 #: users/views.py:42
 msgid "User was deleted successfully"
 msgstr "Пользователь был успешно удален"
+
+#: users/views.py:43
+#, fuzzy
+#| msgid "Delete"
+msgid "Delete status"
+msgstr "Удалить"
+
+#: users/views.py:44
+msgid "You cant delete other users"
+msgstr "Вы не можете удалить других пользователей"
+
+#: users/views.py:49
+msgid "Cant delete active user"
+msgstr "Нельзя удалить активного пользователя"
 
 #: views.py:10
 #, fuzzy
@@ -205,30 +237,3 @@ msgstr "Вы залогинены"
 #: views.py:22
 msgid "You are logged out"
 msgstr "Вы разлогинены"
-
-#~ msgid "Username"
-#~ msgstr "Имя пользователя"
-
-#~ msgid "Password"
-#~ msgstr "Пароль"
-
-#~ msgid "Email"
-#~ msgstr "Адрес электронной почты"
-
-#~ msgid "Update"
-#~ msgstr "Обновить"
-
-#~ msgid "Delete"
-#~ msgstr "Удалить"
-
-#~ msgid "User update"
-#~ msgstr "Редактирование пользователя"
-
-#~ msgid "Update user"
-#~ msgstr "Обновить"
-
-#~ msgid "New password"
-#~ msgstr "Новый пароль"
-
-#~ msgid "Confirm password"
-#~ msgstr "Подтвердите пароль"
