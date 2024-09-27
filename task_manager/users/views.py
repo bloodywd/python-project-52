@@ -50,4 +50,5 @@ class UserFormDeleteView(SelfActionPermissionMixin, SuccessMessageMixin, DeleteV
             return redirect(reverse_lazy("users"))
         else:
             self.object.delete()
+            messages.success(request, self.success_message)
             return HttpResponseRedirect(self.success_url)
