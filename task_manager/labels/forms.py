@@ -8,6 +8,4 @@ class LabelForm(forms.ModelForm):
         fields = ['name', ]
         labels = {
             'name': _('Name'),
-            'time_create': _('Time Created'),
-            'time_update': _('Time Updated'),
         }
