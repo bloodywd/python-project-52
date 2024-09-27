@@ -182,7 +182,7 @@ msgstr "Пользователь был успешно создан"
 
 #: users/views.py:25
 msgid "Submit registration"
-msgstr "Зарегистрироваться"
+msgstr "Зарегистрировать"
 
 #: users/views.py:33
 msgid "User was updated successfully"
