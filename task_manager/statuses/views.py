@@ -10,7 +10,7 @@ from task_manager.statuses.models import Status
 class StatusIndexView(LoginRequiredMixin, ListView):
     model = Status
     template_name = 'statuses/index.html'
-    extra_context = {'title': _("Statuses")}
+    extra_context = {'title': "Statuses"}
 
 
 class StatusFormCreateView(LoginRequiredMixin, SuccessMessageMixin,

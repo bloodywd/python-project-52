@@ -26,7 +26,7 @@ msgstr "Метки"
 
 #: labels/views.py:24
 msgid "Label was created successfully"
-msgstr "Метка была успешно создана"
+msgstr "Метка успешно создана"
 
 #: labels/views.py:25 templates/labels/index.html:8
 msgid "Create label"
@@ -38,7 +38,7 @@ msgstr "Создать"
 
 #: labels/views.py:33
 msgid "Label was updated successfully"
-msgstr "Метка была успешно изменена"
+msgstr "Метка успешно изменена"
 
 #: labels/views.py:34
 msgid "Edit label"
