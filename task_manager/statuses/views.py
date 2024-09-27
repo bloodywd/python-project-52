@@ -27,8 +27,8 @@ class StatusFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 
 class StatusFormUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Status
     form_class = StatusForm
-    queryset = Status.objects.all()
     template_name = 'form.html'
     success_url = reverse_lazy("statuses")
     success_message = _("Status was updated successfully")

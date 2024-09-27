@@ -7,6 +7,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.utils.translation import gettext_lazy as _
 
+from task_manager.labels.forms import LabelForm
 from task_manager.labels.models import Label
 
 
@@ -17,8 +18,7 @@ class LabelIndexView(LoginRequiredMixin, ListView):
 
 
 class LabelFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    model = Label
-    fields = ['name',]
+    form_class = LabelForm
     template_name = 'form.html'
     success_url = reverse_lazy("labels")
     success_message = _("Label was created successfully")
@@ -27,7 +27,7 @@ class LabelFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 class LabelFormUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Label
-    fields = ['name',]
+    form_class = LabelForm
     template_name = 'form.html'
     success_url = reverse_lazy("labels")
     success_message = _("Label was updated successfully")
