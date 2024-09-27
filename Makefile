@@ -8,7 +8,7 @@ dev:
 	@$(MANAGE) runserver
 
 lint:
-	poetry run flake8 task_manager
+	poetry run flake8 task_manager --exclude=migrations
 
 migrate:
 	@$(MANAGE) makemigrations

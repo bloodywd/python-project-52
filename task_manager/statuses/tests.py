@@ -16,9 +16,7 @@ class UserTestCase(TestCase):
 
     def test_create_status(self):
         self.client.post(reverse_lazy('create_status'),
-                                    {
-                                        'name': 'TEST',
-                                    })
+                         {'name': 'TEST', })
         self.assertTrue(Status.objects.filter(name='TEST').exists())
 
     def test_update_status(self):

@@ -19,7 +19,10 @@ from task_manager.statuses import views
 
 urlpatterns = [
     path('', views.StatusIndexView.as_view(), name='statuses'),
-    path('create/', views.StatusFormCreateView.as_view(), name='create_status'),
-    path('<int:pk>/update/', views.StatusFormUpdateView.as_view(), name='update_status'),
-    path('<int:pk>/delete/', views.StatusFormDeleteView.as_view(), name='delete_status'),
+    path('create/', views.StatusFormCreateView.as_view(),
+         name='create_status'),
+    path('<int:pk>/update/', views.StatusFormUpdateView.as_view(),
+         name='update_status'),
+    path('<int:pk>/delete/', views.StatusFormDeleteView.as_view(),
+         name='delete_status'),
 ]

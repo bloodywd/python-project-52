@@ -25,10 +25,12 @@ class UsersIndexView(ListView):
 class UserFormCreateView(BaseUserFormView, CreateView):
     success_url = reverse_lazy("login")
     success_message = _("User was created successfully")
-    extra_context = {'title': _("Registration"), 'button_name': _('Submit registration')}
+    extra_context = {'title': _("Registration"),
+                     'button_name': _('Submit registration')}
 
 
-class UserFormUpdateView(SelfActionPermissionMixin, BaseUserFormView, UpdateView):
+class UserFormUpdateView(SelfActionPermissionMixin,
+                         BaseUserFormView, UpdateView):
     model = get_user_model()
     success_url = reverse_lazy("users")
     success_message = _("User was updated successfully")
@@ -36,7 +38,8 @@ class UserFormUpdateView(SelfActionPermissionMixin, BaseUserFormView, UpdateView
     permission_denied_message = _('You cant edit other users')
 
 
-class UserFormDeleteView(SelfActionPermissionMixin, BaseUserFormView, DeleteView):
+class UserFormDeleteView(SelfActionPermissionMixin,
+                         BaseUserFormView, DeleteView):
     model = get_user_model()
     template_name = 'users/user_delete.html'
     success_url = reverse_lazy("users")

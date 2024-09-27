@@ -13,7 +13,8 @@ class StatusIndexView(LoginRequiredMixin, ListView):
     extra_context = {'title': _("Statuses")}
 
 
-class StatusFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+class StatusFormCreateView(LoginRequiredMixin, SuccessMessageMixin,
+                           CreateView):
     form_class = StatusForm
     template_name = 'form.html'
     success_url = reverse_lazy("statuses")
@@ -26,7 +27,8 @@ class StatusFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
-class StatusFormUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+class StatusFormUpdateView(LoginRequiredMixin, SuccessMessageMixin,
+                           UpdateView):
     model = Status
     form_class = StatusForm
     template_name = 'form.html'
@@ -40,7 +42,8 @@ class StatusFormUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         return super().form_valid(form)
 
 
-class StatusFormDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
+class StatusFormDeleteView(LoginRequiredMixin, SuccessMessageMixin,
+                           DeleteView):
     model = Status
     template_name = 'statuses/status_delete.html'
     success_url = reverse_lazy("statuses")

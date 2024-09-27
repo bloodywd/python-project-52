@@ -8,10 +8,12 @@ class UserTestCase(TestCase):
 
     def setUp(self):
         self.client = Client()
-        self.test_user = self.create_test_user(username='test', password='test1234')
+        self.test_user = self.create_test_user(username='test',
+                                               password='test1234')
 
     def create_test_user(self, username, password):
-        user = self.User.objects.create_user(username=username, password=password)
+        user = self.User.objects.create_user(username=username,
+                                             password=password)
         return user
 
     def test_registration(self):
@@ -45,21 +47,24 @@ class UserTestCase(TestCase):
         url = reverse_lazy('delete_user', kwargs={"pk": self.test_user.id})
         response = self.client.post(url)
         self.assertEqual(response.status_code, 302)
-        self.assertFalse(self.User.objects.filter(id=self.test_user.id).exists())
+        self.assertFalse(self.User.objects.
+                         filter(id=self.test_user.id).exists())
 
     def test_action_to_other_user(self):
-        test_user2 = self.create_test_user(username='test2', password='test1234')
+        test_user2 = self.create_test_user(username='test2',
+                                           password='test1234')
         self.client.force_login(user=self.test_user)
 
         url = reverse_lazy('update_user', kwargs={"pk": test_user2.id})
-        response = self.client.post(url, {
+        self.client.post(url, {
             'username': test_user2.username,
             'first_name': 'changed_name',
             'last_name': test_user2.last_name,
             'password1': 'AXQoKa31',
             'password2': 'AXQoKa31'
         })
-        self.assertNotEqual(self.User.objects.get(id=test_user2.id).first_name, 'changed_name')
+        self.assertNotEqual(self.User.objects.get(id=test_user2.id).
+                            first_name, 'changed_name')
 
         url = reverse_lazy('delete_user', kwargs={"pk": test_user2.id})
         self.client.post(url)
