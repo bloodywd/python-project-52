@@ -14,15 +14,6 @@ from task_manager.users.utils import SelfActionPermissionMixin
 class BaseUserFormView(SuccessMessageMixin):
     form_class = UserForm
     template_name = 'form.html'
-    extra_context = {}
-
-    def get_success_url(self):
-        return self.success_url
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context.update(self.extra_context)
-        return context
 
 
 class UsersIndexView(ListView):
@@ -32,8 +23,6 @@ class UsersIndexView(ListView):
 
 
 class UserFormCreateView(BaseUserFormView, CreateView):
-    form_class = UserForm
-    template_name = 'form.html'
     success_url = reverse_lazy("login")
     success_message = _("User was created successfully")
     extra_context = {'title': _("Registration"), 'button_name': _('Submit registration')}
@@ -41,8 +30,6 @@ class UserFormCreateView(BaseUserFormView, CreateView):
 
 class UserFormUpdateView(SelfActionPermissionMixin, BaseUserFormView, UpdateView):
     model = get_user_model()
-    form_class = UserForm
-    template_name = 'form.html'
     success_url = reverse_lazy("users")
     success_message = _("User was updated successfully")
     extra_context = {'title': _("Edit user"), 'button_name': _('Edit')}

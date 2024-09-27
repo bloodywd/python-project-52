@@ -11,31 +11,30 @@ from task_manager.labels.forms import LabelForm
 from task_manager.labels.models import Label
 
 
-class LabelIndexView(LoginRequiredMixin, ListView):
+class BaseLabelView(LoginRequiredMixin):
     model = Label
+    form_class = LabelForm
+    template_name = 'form.html'
+
+
+class LabelIndexView(BaseLabelView, ListView):
     template_name = 'labels/index.html'
     extra_context = {'title': _("Labels")}
 
 
-class LabelFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    form_class = LabelForm
-    template_name = 'form.html'
+class LabelFormCreateView(BaseLabelView, SuccessMessageMixin, CreateView):
     success_url = reverse_lazy("labels")
     success_message = _("Label was created successfully")
     extra_context = {'title': _("Create label"), 'button_name': _('Create')}
 
 
-class LabelFormUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    model = Label
-    form_class = LabelForm
-    template_name = 'form.html'
+class LabelFormUpdateView(BaseLabelView, SuccessMessageMixin, UpdateView):
     success_url = reverse_lazy("labels")
     success_message = _("Label was updated successfully")
     extra_context = {'title': _("Edit label"), 'button_name': _('Save')}
 
 
-class LabelFormDeleteView(LoginRequiredMixin, DeleteView):
-    model = Label
+class LabelFormDeleteView(BaseLabelView, DeleteView):
     template_name = 'labels/label_delete.html'
     extra_context = {'title': _("Delete labels")}
 
