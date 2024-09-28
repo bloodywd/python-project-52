@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-28 15:31+0300\n"
+"POT-Creation-Date: 2024-09-28 15:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgstr "Метка успешно изменена"
 msgid "Edit label"
 msgstr "Изменить метку"
 
-#: labels/views.py:34 statuses/views.py:37 tasks/views.py:53
+#: labels/views.py:34 statuses/views.py:37 tasks/views.py:52
 #: templates/labels/index.html:24 templates/statuses/index.html:26
 #: templates/tasks/index.html:40 templates/users/index.html:27
 #: users/views.py:37
@@ -105,7 +105,7 @@ msgstr "Удалить статус"
 msgid "Status was deleted successfully"
 msgstr "Статус успешно удален"
 
-#: tasks/filters.py:13 tasks/forms.py:13
+#: tasks/filters.py:13
 msgid "Label"
 msgstr "Метка"
 
@@ -124,6 +124,10 @@ msgstr "Статус"
 #: tasks/forms.py:12
 msgid "Description"
 msgstr "Описание"
+
+#: tasks/forms.py:13 templates/includes/nav.html:21
+msgid "Labels"
+msgstr "Метки"
 
 #: tasks/forms.py:15 templates/tasks/index.html:25
 msgid "Task perfomer"
@@ -145,27 +149,27 @@ msgstr "Задача успешно создана"
 msgid "Create task"
 msgstr "Создать задачу"
 
-#: tasks/views.py:52
+#: tasks/views.py:51
 msgid "Task was updated successfully"
 msgstr "Задача была успешно изменена"
 
-#: tasks/views.py:53
+#: tasks/views.py:52
 msgid "Edit task"
 msgstr "Изменить задачу"
 
-#: tasks/views.py:61
+#: tasks/views.py:60
 msgid "Delete tasks"
 msgstr "Удалить задачу"
 
-#: tasks/views.py:62
+#: tasks/views.py:61
 msgid "Task was deleted successfully"
 msgstr "Задача успешно удалена"
 
-#: tasks/views.py:63
+#: tasks/views.py:62
 msgid "Task can be deleted only be it's author"
 msgstr "Задача может быть удалена ее автором"
 
-#: tasks/views.py:72
+#: tasks/views.py:71
 msgid "You need to be logged in"
 msgstr "Вы не залогинены"
 
@@ -180,10 +184,6 @@ msgstr "Пользователи"
 #: templates/includes/nav.html:18
 msgid "Statuses"
 msgstr "Статусы"
-
-#: templates/includes/nav.html:21
-msgid "Labels"
-msgstr "Метки"
 
 #: templates/includes/nav.html:35 views.py:17
 msgid "Login"
@@ -268,6 +268,18 @@ msgstr "Имя пользователя"
 #: templates/users/index.html:14
 msgid "Full name"
 msgstr "Полное имя"
+
+#: users/forms.py:15 users/forms.py:16
+msgid "Field is required"
+msgstr "Обязательно поле"
+
+#: users/forms.py:21
+msgid "First name is required"
+msgstr "Имя обязательно"
+
+#: users/forms.py:27
+msgid "Last name is required"
+msgstr "Фамилия обязательна"
 
 #: users/views.py:27
 msgid "User was created successfully"
