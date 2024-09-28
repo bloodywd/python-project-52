@@ -14,11 +14,9 @@ class Task(models.Model):
                                default='')
     status = models.ForeignKey(Status, on_delete=models.PROTECT,
                                related_name='tasks')
-    executor = models.ForeignKey(get_user_model(),
-                                      on_delete=models.PROTECT,
-                                      related_name='tasks',
-                                      null=True, default='')
-    label = models.ManyToManyField(Label, blank=True, related_name='tasks')
+    executor = models.ForeignKey(get_user_model(), on_delete=models.PROTECT,
+                                 related_name='tasks', null=True, default='')
+    labels = models.ManyToManyField(Label, blank=True, related_name='tasks')
 
     def __str__(self):
         return self.name

@@ -8,7 +8,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class TaskFilter(FilterSet):
-    label = ModelChoiceFilter(
+    labels = ModelChoiceFilter(
         queryset=Label.objects.all(),
         label=_('Label'),
         label_suffix=""
