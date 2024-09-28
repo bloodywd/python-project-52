@@ -10,5 +10,8 @@ class Status(models.Model):
                                 related_name='statuses_created', null=True,
                                 default=None)
 
+    def has_tasks(self):
+        return Status.objects.get(id=self.id).tasks.exists()
+
     def __str__(self):
         return self.name

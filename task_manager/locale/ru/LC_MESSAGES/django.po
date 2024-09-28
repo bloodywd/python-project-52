@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-28 15:58+0300\n"
+"POT-Creation-Date: 2024-09-28 19:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr "Метка успешно создана"
 msgid "Create label"
 msgstr "Создать метку"
 
-#: labels/views.py:28 statuses/views.py:22 tasks/views.py:37
+#: labels/views.py:28 statuses/views.py:25 tasks/views.py:37
 msgid "Create"
 msgstr "Создать"
 
@@ -50,10 +50,10 @@ msgstr "Метка успешно изменена"
 msgid "Edit label"
 msgstr "Изменить метку"
 
-#: labels/views.py:34 statuses/views.py:37 tasks/views.py:52
+#: labels/views.py:34 statuses/views.py:40 tasks/views.py:52
 #: templates/labels/index.html:24 templates/statuses/index.html:26
-#: templates/tasks/index.html:40 templates/users/index.html:27
-#: users/views.py:37
+#: templates/tasks/index.html:40 templates/tasks/task.html:40
+#: templates/users/index.html:27 users/views.py:37
 msgid "Edit"
 msgstr "Изменить"
 
@@ -77,31 +77,35 @@ msgstr "Английский"
 msgid "Russian"
 msgstr "Русский"
 
-#: statuses/views.py:13
+#: statuses/views.py:16
 msgid "Status list"
 msgstr "Список статусов"
 
-#: statuses/views.py:21
+#: statuses/views.py:24
 msgid "Status was created successfully"
 msgstr "Статус успешно создан"
 
-#: statuses/views.py:22 templates/statuses/index.html:8
+#: statuses/views.py:25 templates/statuses/index.html:8
 msgid "Create status"
 msgstr "Создать статус"
 
-#: statuses/views.py:36
+#: statuses/views.py:39
 msgid "Status was updated successfully"
 msgstr "Статус успешно изменен"
 
-#: statuses/views.py:37
+#: statuses/views.py:40
 msgid "Edit status"
 msgstr "Изменить статус"
 
-#: statuses/views.py:50
+#: statuses/views.py:52
 msgid "Delete status"
 msgstr "Удалить статус"
 
-#: statuses/views.py:51
+#: statuses/views.py:57
+msgid "Status is on use"
+msgstr "Невозможно удалить статус, потому что он используется"
+
+#: statuses/views.py:61
 msgid "Status was deleted successfully"
 msgstr "Статус успешно удален"
 
@@ -109,15 +113,16 @@ msgstr "Статус успешно удален"
 msgid "Label"
 msgstr "Метка"
 
-#: tasks/filters.py:17
+#: tasks/filters.py:18
 msgid "Only own tasks"
 msgstr "Только свои задачи"
 
-#: tasks/filters.py:24
+#: tasks/filters.py:26
 msgid "Task Performer"
 msgstr "Исполнитель"
 
-#: tasks/filters.py:29 tasks/forms.py:14 templates/tasks/index.html:23
+#: tasks/filters.py:32 tasks/forms.py:14 templates/tasks/index.html:23
+#: templates/tasks/task.html:24
 msgid "Status"
 msgstr "Статус"
 
@@ -126,10 +131,11 @@ msgid "Description"
 msgstr "Описание"
 
 #: tasks/forms.py:13 templates/includes/nav.html:21
+#: templates/tasks/task.html:32
 msgid "Labels"
 msgstr "Метки"
 
-#: tasks/forms.py:15 templates/tasks/index.html:25
+#: tasks/forms.py:15 templates/tasks/index.html:25 templates/tasks/task.html:20
 msgid "Task perfomer"
 msgstr "Исполнитель"
 
@@ -234,22 +240,25 @@ msgid "Learn more"
 msgstr "Узнать больше"
 
 #: templates/labels/index.html:26 templates/statuses/index.html:28
-#: templates/tasks/index.html:42 templates/users/index.html:29
+#: templates/tasks/index.html:42 templates/tasks/task.html:42
+#: templates/users/index.html:29
 msgid "Delete"
 msgstr "Удалить"
 
 #: templates/labels/label_delete.html:11
-#: templates/statuses/status_delete.html:11 templates/users/user_delete.html:11
+#: templates/statuses/status_delete.html:11 templates/tasks/task_delete.html:11
+#: templates/users/user_delete.html:11
 msgid "Are you sure, you want to delete "
 msgstr "Вы уверены, что хотите удалить "
 
 #: templates/labels/label_delete.html:12
-#: templates/statuses/status_delete.html:12 templates/users/user_delete.html:12
+#: templates/statuses/status_delete.html:12 templates/tasks/task_delete.html:12
+#: templates/users/user_delete.html:12
 msgid "Yes, delete"
 msgstr "Да, удалить"
 
 #: templates/statuses/index.html:15 templates/tasks/index.html:26
-#: templates/users/index.html:15
+#: templates/tasks/task.html:28 templates/users/index.html:15
 msgid "Created at"
 msgstr "Дата создания"
 
@@ -257,7 +266,7 @@ msgstr "Дата создания"
 msgid "Show"
 msgstr "Показать"
 
-#: templates/tasks/index.html:24
+#: templates/tasks/index.html:24 templates/tasks/task.html:16
 msgid "Author"
 msgstr "Автор"
 
