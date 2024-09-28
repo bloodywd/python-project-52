@@ -139,7 +139,7 @@ msgstr "Просмотр задачи"
 
 #: tasks/views.py:36
 msgid "Task was created successfully"
-msgstr "Задача была успешно создана"
+msgstr "Задача успешно создана"
 
 #: tasks/views.py:37 templates/tasks/index.html:8
 msgid "Create task"
@@ -159,7 +159,7 @@ msgstr "Удалить задачу"
 
 #: tasks/views.py:62
 msgid "Task was deleted successfully"
-msgstr "Задача была успешно удалена"
+msgstr "Задача успешно удалена"
 
 #: tasks/views.py:63
 msgid "Task can be deleted only be it's author"
