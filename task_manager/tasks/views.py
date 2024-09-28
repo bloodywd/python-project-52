@@ -48,7 +48,7 @@ class TaskFormUpdateView(LoginRequiredMixin, SuccessMessageMixin,
     template_name = 'form.html'
     success_url = reverse_lazy("tasks")
     success_message = _("Task was updated successfully")
-    extra_context = {'title': _("Edit task"), 'button_name': _('Save')}
+    extra_context = {'title': _("Edit task"), 'button_name': _('Edit')}
 
 
 class TaskFormDeleteView(PermissionRequiredMixin, SuccessMessageMixin,

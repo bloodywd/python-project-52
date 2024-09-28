@@ -31,7 +31,7 @@ class LabelFormCreateView(BaseLabelView, SuccessMessageMixin, CreateView):
 class LabelFormUpdateView(BaseLabelView, SuccessMessageMixin, UpdateView):
     success_url = reverse_lazy("labels")
     success_message = _("Label was updated successfully")
-    extra_context = {'title': _("Edit label"), 'button_name': _('Save')}
+    extra_context = {'title': _("Edit label"), 'button_name': _('Edit')}
 
 
 class LabelFormDeleteView(BaseLabelView, DeleteView):
