@@ -21,28 +21,28 @@ class TaskTestCase(TestCase):
                                     {
                                         'name': 'test',
                                         'status': self.status.id,
-                                        'task_perfomer': self.user.id
+                                        'executor': self.user.id
                                     })
         print(response)
         self.assertTrue(Task.objects.filter(name='test').exists())
 
     def test_update_task(self):
         task = Task.objects.create(name='test', status=self.status,
-                                   task_perfomer=self.user)
+                                   executor=self.user)
         task_pk = task.id
         url = reverse_lazy('update_task', kwargs={"pk": task_pk})
         response = self.client.post(url,
                                     {
                                         'name': 'updatetest',
                                         'status': self.status.id,
-                                        'task_perfomer': self.user.id
+                                        'executor': self.user.id
                                     })
         self.assertEqual(response.status_code, 302)
         self.assertEqual(Task.objects.get(id=task_pk).name, 'updatetest')
 
     def test_delete_status(self):
         task = Task.objects.create(name='test', status=self.status,
-                                   author=self.user, task_perfomer=self.user)
+                                   author=self.user, executor=self.user)
         task_pk = task.id
         url = reverse_lazy('delete_task', kwargs={"pk": task_pk})
         self.client.post(url)

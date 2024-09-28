@@ -6,11 +6,11 @@ from django.utils.translation import gettext_lazy as _
 class TaskForm(forms.ModelForm):
     class Meta:
         model = Task
-        fields = ['name', 'description', 'status', 'task_perfomer', 'label']
+        fields = ['name', 'description', 'status', 'executor', 'label']
         labels = {
             'name': _('Name'),
             'description': _('Description'),
             'label': _('Labels'),
             'status': _('Status'),
-            'task_perfomer': _('Task perfomer'),
+            'executor': _('Task perfomer'),
         }

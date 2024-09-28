@@ -14,7 +14,7 @@ class Task(models.Model):
                                default='')
     status = models.ForeignKey(Status, on_delete=models.PROTECT,
                                related_name='tasks')
-    task_perfomer = models.ForeignKey(get_user_model(),
+    executor = models.ForeignKey(get_user_model(),
                                       on_delete=models.PROTECT,
                                       related_name='tasks',
                                       null=True, default='')

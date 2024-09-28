@@ -21,7 +21,7 @@ class TaskFilter(FilterSet):
         label_suffix=""
     )
 
-    task_perfomer = ModelChoiceFilter(
+    executor = ModelChoiceFilter(
         queryset=get_user_model().objects.all(),
         label=_('Task Performer'),
         label_suffix=""
@@ -41,4 +41,4 @@ class TaskFilter(FilterSet):
 
     class Meta:
         model = Task
-        fields = ['status', 'task_perfomer']
+        fields = ['status', 'executor']
