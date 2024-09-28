@@ -10,16 +10,19 @@ from django.contrib import messages
 from django.shortcuts import redirect
 
 
-class StatusIndexView(LoginRequiredMixin, ListView):
+class BaseLabelView(LoginRequiredMixin):
     model = Status
+    form_class = StatusForm
+    template_name = 'form.html'
+
+
+class StatusIndexView(BaseLabelView, ListView):
     template_name = 'statuses/index.html'
     extra_context = {'title': _("Status list")}
 
 
-class StatusFormCreateView(LoginRequiredMixin, SuccessMessageMixin,
+class StatusFormCreateView(BaseLabelView, SuccessMessageMixin,
                            CreateView):
-    form_class = StatusForm
-    template_name = 'form.html'
     success_url = reverse_lazy("statuses")
     success_message = _("Status was created successfully")
     extra_context = {'title': _("Create status"), 'button_name': _('Create')}
@@ -30,11 +33,8 @@ class StatusFormCreateView(LoginRequiredMixin, SuccessMessageMixin,
         return super().form_valid(form)
 
 
-class StatusFormUpdateView(LoginRequiredMixin, SuccessMessageMixin,
+class StatusFormUpdateView(BaseLabelView, SuccessMessageMixin,
                            UpdateView):
-    model = Status
-    form_class = StatusForm
-    template_name = 'form.html'
     success_url = reverse_lazy("statuses")
     success_message = _("Status was updated successfully")
     extra_context = {'title': _("Edit status"), 'button_name': _('Edit')}
@@ -45,9 +45,8 @@ class StatusFormUpdateView(LoginRequiredMixin, SuccessMessageMixin,
         return super().form_valid(form)
 
 
-class StatusFormDeleteView(LoginRequiredMixin, SuccessMessageMixin,
+class StatusFormDeleteView(BaseLabelView, SuccessMessageMixin,
                            DeleteView):
-    model = Status
     template_name = 'statuses/status_delete.html'
     extra_context = {'title': _("Delete status")}
 

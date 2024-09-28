@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "Task Manager is a task management system similar to http://www.redmine.org. It allows you to set tasks, assign performers and change their statuses. Registration and authentication are required to work with the system."
 authors = ["bloodywd <bloodyforreal@gmail.com>"]
 readme = "README.md"
 packages = [
@@ -13,7 +13,7 @@ classifiers = [
   "Natural Language :: English",
   "Operating System :: OS Independent",
   "Programming Language :: Python",
-  "Topic :: Internet :: WWW/HTTP :: Site Management :: Link Checking",
+  "Topic :: Office/Business :: Groupware",
 ]
 
 [tool.poetry.dependencies]
@@ -24,15 +24,15 @@ django-bootstrap5 = "^23.4"
 django-filter = "^24.2"
 rollbar = "^0.16.3"
 django-extensions = "^3.2.3"
-pytest-cov = "^5.0.0"
-coverage = "^7.6.1"
-flake8 = "^7.1.1"
 
 [tool.poetry.group.dev.dependencies]
 python-dotenv = "^1.0.1"
 django-extensions = "^3.2.3"
 ipython = "^8.22.2"
 dj-database-url = "^2.1.0"
+coverage = "^7.6.1"
+pytest-cov = "^5.0.0"
+flake8 = "^7.1.1"
 
 [build-system]
 requires = ["poetry-core"]

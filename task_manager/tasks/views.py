@@ -14,24 +14,25 @@ from task_manager.tasks.forms import TaskForm
 from task_manager.tasks.models import Task
 
 
-class TaskIndexView(LoginRequiredMixin, FilterView):
+class BaseLabelView(LoginRequiredMixin):
     model = Task
+    form_class = TaskForm
+    template_name = 'form.html'
+
+
+class TaskIndexView(BaseLabelView, FilterView):
     template_name = 'tasks/index.html'
     extra_context = {'title': _("Tasks")}
     filterset_class = TaskFilter
 
 
-class TaskView(LoginRequiredMixin, DetailView):
-    model = Task
+class TaskView(BaseLabelView, DetailView):
     context_object_name = 'task'
     template_name = 'tasks/task.html'
     extra_context = {'title': _("View task")}
 
 
-class TaskFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    model = Task
-    form_class = TaskForm
-    template_name = 'form.html'
+class TaskFormCreateView(BaseLabelView, SuccessMessageMixin, CreateView):
     success_url = reverse_lazy("tasks")
     success_message = _("Task was created successfully")
     extra_context = {'title': _("Create task"), 'button_name': _('Create')}
@@ -42,11 +43,8 @@ class TaskFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
-class TaskFormUpdateView(LoginRequiredMixin, SuccessMessageMixin,
+class TaskFormUpdateView(BaseLabelView, SuccessMessageMixin,
                          UpdateView):
-    model = Task
-    form_class = TaskForm
-    template_name = 'form.html'
     success_url = reverse_lazy("tasks")
     success_message = _("Task was updated successfully")
     extra_context = {'title': _("Edit task"), 'button_name': _('Edit')}
