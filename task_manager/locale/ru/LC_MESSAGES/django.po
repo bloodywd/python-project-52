@@ -173,7 +173,7 @@ msgstr "Задача успешно удалена"
 
 #: tasks/views.py:62
 msgid "Task can be deleted only be it's author"
-msgstr "Задача может быть удалена ее автором"
+msgstr "Задачу может удалить только ее автор"
 
 #: tasks/views.py:71
 msgid "You need to be logged in"
