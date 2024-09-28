@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-28 19:47+0300\n"
+"POT-Creation-Date: 2024-09-28 19:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,7 +63,7 @@ msgstr "Удалить метку"
 
 #: labels/views.py:44
 msgid "Label is on active task"
-msgstr "Метка на активной задаче"
+msgstr "Невозможно удалить метку"
 
 #: labels/views.py:48
 msgid "Label was deleted successfully"
@@ -105,7 +105,7 @@ msgstr "Удалить статус"
 msgid "Status is on use"
 msgstr "Невозможно удалить статус, потому что он используется"
 
-#: statuses/views.py:61
+#: statuses/views.py:62
 msgid "Status was deleted successfully"
 msgstr "Статус успешно удален"
 
