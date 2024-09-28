@@ -21,8 +21,7 @@ class TaskTestCase(TestCase):
                                     {
                                         'name': 'test',
                                         'status': self.status.id,
-                                        'executor': self.user.id
-                                    })
+                                        'executor': self.user.id})
         print(response)
         self.assertTrue(Task.objects.filter(name='test').exists())
 
