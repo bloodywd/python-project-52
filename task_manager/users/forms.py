@@ -27,6 +27,5 @@ class UserForm(UserCreationForm):
             raise ValidationError(_("Last name is required"))
         return last_name
 
-
     def clean_username(self):
         return self.cleaned_data["username"]

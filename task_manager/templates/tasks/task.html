@@ -13,28 +13,33 @@
     <p>{{task.description}}</p>
     <hr>
     <div class="row p-2">
-      <div class="col">Author:</div>
+      <div class="col">{% translate "Author" %}:</div>
       <div class="col">{{task.author}}</div>
     </div>
     <div class="row p-2">
-      <div class="col">Task perfomer:</div>
+      <div class="col">{% translate "Task perfomer" %}:</div>
       <div class="col">{{task.task_perfomer}}</div>
     </div>
     <div class="row p-2">
-      <div class="col">Status:</div>
+      <div class="col">{% translate "Status" %}:</div>
       <div class="col">{{task.status}}</div>
     </div>
     <div class="row p-2">
-      <div class="col">Created at:</div>
+      <div class="col">{% translate "Created at" %}:</div>
       <div class="col">{{task.time_create}}</div>
     </div>
     <div class="row p-2">
-      <div class="col"></div>
-      <div class="col"></div>
+      <div class="col">{% translate "Labels" %}:
+        <ul>
+          {% for label in task.label.all %}
+            <li>{{label}}</li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
-    <a class="p-2" href="{% url 'update_task' task.id %}">Edit</a>
+    <a class="p-2" href="{% url 'update_task' task.id %}">{% translate "Edit" %}</a>
     <br>
-    <a class="p-2" href="{% url 'delete_task' task.id %}">Delete</a>
+    <a class="p-2" href="{% url 'delete_task' task.id %}">{% translate "Delete" %}</a>
     </div>
   </div>
 </div>
