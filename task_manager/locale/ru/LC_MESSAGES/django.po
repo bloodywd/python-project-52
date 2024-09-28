@@ -299,7 +299,7 @@ msgstr "Изменить пользователя"
 
 #: users/views.py:38
 msgid "You cant edit other users"
-msgstr "Вы не можете редактировать других пользователей"
+msgstr "У вас нет прав для изменения"
 
 #: users/views.py:46
 msgid "User was deleted successfully"
@@ -311,7 +311,7 @@ msgstr "Удалить пользователя"
 
 #: users/views.py:48
 msgid "You cant delete other users"
-msgstr "Вы не можете удалить других пользователей"
+msgstr "У вас нет прав для изменения"
 
 #: users/views.py:53
 msgid "Cant delete active user"
