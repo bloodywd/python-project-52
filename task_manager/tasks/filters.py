@@ -10,29 +10,33 @@ from django.utils.translation import gettext_lazy as _
 class TaskFilter(FilterSet):
     label = ModelChoiceFilter(
         queryset=Label.objects.all(),
-        label=_('Label')
+        label=_('Label'),
+        label_suffix=""
     )
 
     own_tasks = BooleanFilter(
         label=_('Only own tasks'),
         widget=forms.CheckboxInput,
         method='get_own_tasks',
+        label_suffix=""
     )
 
     task_perfomer = ModelChoiceFilter(
         queryset=get_user_model().objects.all(),
-        label=_('Task Performer')
+        label=_('Task Performer'),
+        label_suffix=""
     )
 
     status = ModelChoiceFilter(
         queryset=Status.objects.all(),
-        label=_('Status')
+        label=_('Status'),
+        label_suffix=""
     )
 
     def get_own_tasks(self, queryset, name, value):
         if value:
             user = self.request.user
-            return queryset.filter(task_perfomer=user)
+            return queryset.filter(author=user)
         return queryset
 
     class Meta:
