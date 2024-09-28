@@ -19,7 +19,7 @@ class BaseLabelView(LoginRequiredMixin):
 
 class LabelIndexView(BaseLabelView, ListView):
     template_name = 'labels/index.html'
-    extra_context = {'title': _("Labels")}
+    extra_context = {'title': _("Label list")}
 
 
 class LabelFormCreateView(BaseLabelView, SuccessMessageMixin, CreateView):

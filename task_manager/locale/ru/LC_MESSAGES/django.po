@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-28 02:35+0300\n"
+"POT-Creation-Date: 2024-09-28 15:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,9 +25,9 @@ msgstr ""
 msgid "Name"
 msgstr "Имя"
 
-#: labels/views.py:22 templates/includes/nav.html:21
-msgid "Labels"
-msgstr "Метки"
+#: labels/views.py:22
+msgid "Label list"
+msgstr "Список меток"
 
 #: labels/views.py:27
 msgid "Label was created successfully"
@@ -49,7 +49,7 @@ msgstr "Метка успешно изменена"
 msgid "Edit label"
 msgstr "Изменить метку"
 
-#: labels/views.py:34 statuses/views.py:37 tasks/views.py:51
+#: labels/views.py:34 tasks/views.py:51
 msgid "Save"
 msgstr "Сохранить"
 
@@ -92,6 +92,12 @@ msgstr "Статус успешно изменен"
 #: statuses/views.py:37
 msgid "Edit status"
 msgstr "Изменить статус"
+
+#: statuses/views.py:37 templates/labels/index.html:24
+#: templates/statuses/index.html:26 templates/tasks/index.html:40
+#: templates/users/index.html:27 users/views.py:37
+msgid "Edit"
+msgstr "Изменить"
 
 #: statuses/views.py:50
 msgid "Delete status"
@@ -169,6 +175,10 @@ msgstr "Пользователи"
 msgid "Statuses"
 msgstr "Статусы"
 
+#: templates/includes/nav.html:21
+msgid "Labels"
+msgstr "Метки"
+
 #: templates/includes/nav.html:35 views.py:17
 msgid "Login"
 msgstr "Вход"
@@ -216,12 +226,6 @@ msgstr "Интеграция коллектора ошибок Rollbar"
 #: templates/index.html:24
 msgid "Learn more"
 msgstr "Узнать больше"
-
-#: templates/labels/index.html:24 templates/statuses/index.html:26
-#: templates/tasks/index.html:40 templates/users/index.html:27
-#: users/views.py:37
-msgid "Edit"
-msgstr "Изменить"
 
 #: templates/labels/index.html:26 templates/statuses/index.html:28
 #: templates/tasks/index.html:42 templates/users/index.html:29
