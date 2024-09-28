@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-28 15:18+0300\n"
+"POT-Creation-Date: 2024-09-28 15:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,8 +20,9 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: labels/forms.py:11 statuses/forms.py:11 templates/labels/index.html:14
-#: templates/statuses/index.html:14 templates/tasks/index.html:22
+#: labels/forms.py:11 statuses/forms.py:11 tasks/forms.py:11
+#: templates/labels/index.html:14 templates/statuses/index.html:14
+#: templates/tasks/index.html:22
 msgid "Name"
 msgstr "Имя"
 
@@ -37,7 +38,7 @@ msgstr "Метка успешно создана"
 msgid "Create label"
 msgstr "Создать метку"
 
-#: labels/views.py:28 statuses/views.py:22 tasks/views.py:36
+#: labels/views.py:28 statuses/views.py:22 tasks/views.py:37
 msgid "Create"
 msgstr "Создать"
 
@@ -49,9 +50,12 @@ msgstr "Метка успешно изменена"
 msgid "Edit label"
 msgstr "Изменить метку"
 
-#: labels/views.py:34 tasks/views.py:51
-msgid "Save"
-msgstr "Сохранить"
+#: labels/views.py:34 statuses/views.py:37 tasks/views.py:53
+#: templates/labels/index.html:24 templates/statuses/index.html:26
+#: templates/tasks/index.html:40 templates/users/index.html:27
+#: users/views.py:37
+msgid "Edit"
+msgstr "Изменить"
 
 #: labels/views.py:39
 msgid "Delete labels"
@@ -93,12 +97,6 @@ msgstr "Статус успешно изменен"
 msgid "Edit status"
 msgstr "Изменить статус"
 
-#: statuses/views.py:37 templates/labels/index.html:24
-#: templates/statuses/index.html:26 templates/tasks/index.html:40
-#: templates/users/index.html:27 users/views.py:37
-msgid "Edit"
-msgstr "Изменить"
-
 #: statuses/views.py:50
 msgid "Delete status"
 msgstr "Удалить статус"
@@ -107,7 +105,7 @@ msgstr "Удалить статус"
 msgid "Status was deleted successfully"
 msgstr "Статус успешно удален"
 
-#: tasks/filters.py:13
+#: tasks/filters.py:13 tasks/forms.py:13
 msgid "Label"
 msgstr "Метка"
 
@@ -119,47 +117,55 @@ msgstr "Только свои задачи"
 msgid "Task Performer"
 msgstr "Исполнитель"
 
-#: tasks/filters.py:29 templates/tasks/index.html:23
+#: tasks/filters.py:29 tasks/forms.py:14 templates/tasks/index.html:23
 msgid "Status"
 msgstr "Статус"
 
-#: tasks/views.py:19 templates/includes/nav.html:24
+#: tasks/forms.py:12
+msgid "Description"
+msgstr "Описание"
+
+#: tasks/forms.py:15 templates/tasks/index.html:25
+msgid "Task perfomer"
+msgstr "Исполнитель"
+
+#: tasks/views.py:20 templates/includes/nav.html:24
 msgid "Tasks"
 msgstr "Задачи"
 
-#: tasks/views.py:27
+#: tasks/views.py:28
 msgid "View task"
 msgstr "Просмотр задачи"
 
-#: tasks/views.py:35
+#: tasks/views.py:36
 msgid "Task was created successfully"
 msgstr "Задача была успешно создана"
 
-#: tasks/views.py:36 templates/tasks/index.html:8
+#: tasks/views.py:37 templates/tasks/index.html:8
 msgid "Create task"
 msgstr "Создать задачу"
 
-#: tasks/views.py:50
+#: tasks/views.py:52
 msgid "Task was updated successfully"
 msgstr "Задача была успешно изменена"
 
-#: tasks/views.py:51
+#: tasks/views.py:53
 msgid "Edit task"
 msgstr "Изменить задачу"
 
-#: tasks/views.py:59
+#: tasks/views.py:61
 msgid "Delete tasks"
 msgstr "Удалить задачу"
 
-#: tasks/views.py:60
+#: tasks/views.py:62
 msgid "Task was deleted successfully"
 msgstr "Задача была успешно удалена"
 
-#: tasks/views.py:61
+#: tasks/views.py:63
 msgid "Task can be deleted only be it's author"
 msgstr "Задача может быть удалена ее автором"
 
-#: tasks/views.py:70
+#: tasks/views.py:72
 msgid "You need to be logged in"
 msgstr "Вы не залогинены"
 
@@ -255,10 +261,6 @@ msgstr "Показать"
 msgid "Author"
 msgstr "Автор"
 
-#: templates/tasks/index.html:25
-msgid "Task perfomer"
-msgstr "Исполнитель"
-
 #: templates/users/index.html:13
 msgid "Nickname"
 msgstr "Имя пользователя"
@@ -318,3 +320,6 @@ msgstr "Вы залогинены"
 #: views.py:23
 msgid "You are logged out"
 msgstr "Вы разлогинены"
+
+#~ msgid "Save"
+#~ msgstr "Сохранить"

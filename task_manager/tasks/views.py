@@ -10,6 +10,7 @@ from django.utils.translation import gettext_lazy as _
 from django_filters.views import FilterView
 
 from task_manager.tasks.filters import TaskFilter
+from task_manager.tasks.forms import TaskForm
 from task_manager.tasks.models import Task
 
 
@@ -29,7 +30,7 @@ class TaskView(LoginRequiredMixin, DetailView):
 
 class TaskFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Task
-    fields = ['name', 'description', 'label', 'status', 'task_perfomer', ]
+    form_class = TaskForm
     template_name = 'form.html'
     success_url = reverse_lazy("tasks")
     success_message = _("Task was created successfully")
@@ -44,7 +45,7 @@ class TaskFormCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 class TaskFormUpdateView(LoginRequiredMixin, SuccessMessageMixin,
                          UpdateView):
     model = Task
-    fields = ['name', 'description', 'label', 'status', 'task_perfomer', ]
+    form_class = TaskForm
     template_name = 'form.html'
     success_url = reverse_lazy("tasks")
     success_message = _("Task was updated successfully")
