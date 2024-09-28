@@ -21,4 +21,4 @@ To use the app you'll need to provide it with $DATABASE_URL and $SECRET_KEY vars
 ## System requirements
 
 - Python 3.10
-- PostgreSQL 12.14
+- PostgreSQL or SQLite Database
