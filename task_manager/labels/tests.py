@@ -3,14 +3,17 @@ from django.urls import reverse_lazy
 from django.contrib.auth import get_user_model
 from task_manager.labels.models import Label
 
+
 class LabelTestCase(TestCase):
     def setUp(self):
         self.client = Client()
-        self.user = get_user_model().objects.create_user(username="test", password="test1234")
+        self.user = get_user_model().objects.create_user(username="test",
+                                                         password="test1234")
         self.client.force_login(self.user)
 
     def test_create_label(self):
-        response = self.client.post(reverse_lazy('create_label'), {'name': 'TEST'})
+        response = self.client.post(reverse_lazy('create_label'),
+                                    {'name': 'TEST'})
         self.assertRedirects(response, reverse_lazy('labels'))
         self.assertTrue(Label.objects.filter(name='TEST').exists())
 
