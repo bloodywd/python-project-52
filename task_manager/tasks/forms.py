@@ -10,7 +10,7 @@ class TaskForm(forms.ModelForm):
         labels = {
             'name': _('Name'),
             'description': _('Description'),
-            'label': _('Label'),
+            'label': _('Labels'),
             'status': _('Status'),
             'task_perfomer': _('Task perfomer'),
         }
